@@ -128,23 +128,7 @@ def step1():
 
     if "Option B" in case_type:
         st.divider()
-        st.subheader("🏛️ Court Hearing Details 聆訊資料 (Option B)")
-        c1, c2, c3 = st.columns(3)
-        with c1:
-            hearing_date = st.date_input("Hearing Date 聆訊日期", datetime.date.today() + datetime.timedelta(days=14))
-        with c2:
-            hearing_time = st.selectbox("Time 時間", [
-                "上午9時", "上午9時30分", "上午10時", "上午10時30分",
-                "上午11時", "下午2時", "下午2時30分", "下午3時",
-            ])
-        with c3:
-            hearing_floor = st.text_input("Floor 樓層", "6")
-        c4, c5 = st.columns(2)
-        with c4:
-            hearing_room = st.text_input("Room 庭", "6")
-        with c5:
-            hearing_judge = st.text_input("Judge 法官 (leave blank if unknown)", "")
-
+        st.info("🏛️ 聆訊日期/時間/庭數由法院職員排期後填寫，文件內已預留空白欄。\n(Hearing date, time and court room will be filled by the court clerk after filing — blanks are pre-printed in the document.)")
         st.subheader("📮 Mailing Details 郵寄資料 (Option B)")
         c1, c2 = st.columns(2)
         with c1:
@@ -209,11 +193,6 @@ def step1():
                 fd.update({
                     "respondent_email_date_zh": zh_date(email_date),
                     "respondent_response_desc": email_desc,
-                    "hearing_date_zh": zh_date(hearing_date),
-                    "hearing_time": hearing_time,
-                    "hearing_floor": hearing_floor,
-                    "hearing_room": hearing_room,
-                    "hearing_judge": hearing_judge,
                     "mail_date_zh": zh_date(mail_date),
                     "post_office_zh": post_office_zh,
                     "respondent_address_short_zh": respondent_addr_short,

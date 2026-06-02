@@ -10,8 +10,8 @@ CASE = {
     "petitioner_en": "FONG, MING",
     "respondent_zh": "李慧儀",
     "respondent_en": "LEE, WAI YEE",
-    "petitioner_address_zh": "屯門青盈路28號The Bloomsway第3座G座",
-    "petitioner_address_en": "GA, Tower 3, The Bloomsway, 28 Tsing Ying Road, Tuen Mun, New Territories",
+    "petitioner_address_zh": "屯門青盈路18號滿名山滿庭第2座GA室",
+    "petitioner_address_en": "GA, Tower 2, The Laguna, The Bloomsway, 18 Tsing Ying Road, Tuen Mun, New Territories",
     "respondent_hkid": "Z278264(7)",
     "custody_order_date_zh": "2021年12月14日",
     "custody_order_date_en": "12 December 2023",
@@ -305,10 +305,10 @@ def generate_zh_notice_b(data):
     doc.add_paragraph(case.get("respondent_address_zh", "香港"))
     doc.add_paragraph()
     _body(doc,
-        f"現通知你呈請人打算於  {data['hearing_date_zh']}  {data['hearing_time']}，"
-        f"在香港灣仔港灣道12號灣仔政府大樓灣仔法院  {data['hearing_floor']}  樓"
-        f"第  {data['hearing_room']}  庭內庭，家事法庭  {data.get('hearing_judge', '')}  "
-        f"法官申請命令使：")
+        "現通知你呈請人打算於  ______  年  ______  月  ______  日  上/下午  ______  時，"
+        "在香港灣仔港灣道12號灣仔政府大樓灣仔法院  ______  樓"
+        "第  ______  庭內庭，家事法庭"
+        "法官申請命令使：")
     doc.add_paragraph()
     _numbered(doc, 1,
         f"呈請人獲得許可，可以於  {data['start_date_zh']}  至  {data['end_date_zh']}  "
